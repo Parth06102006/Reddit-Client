@@ -11,7 +11,7 @@ Real-time Updates: Fetch the latest posts from Reddit's JSON API
 Error Handling: Graceful handling of API issues and invalid subreddit names
 
 >[!NOTE]
->Check out the project https://redifi.vercel.app/
+>Check out my project https://redifi.vercel.app/
 
 ### Technology Stack
 
@@ -27,5 +27,7 @@ Redifi is a frontend-only application that directly fetches data from Reddit's p
 https://www.reddit.com/r/{subreddit}.json
 The application handles CORS limitations, rate limiting, error states, and data transformation on the client side to provide a smooth user experience. No backend server is required as the Reddit API allows direct client-side requests to their JSON endpoints.
 
+>[!NOTE]
+>[Additional Project Info](https://roadmap.sh/projects/reddit-client)
 
 
