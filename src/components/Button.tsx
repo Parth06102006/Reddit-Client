@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react'
+import  { ReactElement } from 'react'
 
 interface ButtonProps{
     variant:'primary'|'secondary';
@@ -38,7 +38,7 @@ const defaultStyling = 'rounded font-bold cursor-pointer shadow-[0px_3px_8px_rgb
 export const Button = (props: ButtonProps) => {
   return (
     <div className={`${styling[props.variant]} ${sizeButton[props.size]} ${defaultStyling}`} onClick={props.onClick||props.change
-        
+
     }>
         {props.startIcon && <div className='flex items-center'>{props.startIcon}</div>}
         {props.text}

@@ -1,5 +1,4 @@
 "use client";
-import { useState } from 'react'
 import './App.css'
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import { Home } from './components/index'
@@ -7,7 +6,7 @@ import { ShootingStars } from "./components/ShootingStars";
 import { StarsBackground } from "./components/Background";
 import Dashboard from './components/Dashboard';
 import { SearchContextProvider } from './context/redditSearch';
-import { AddContext, AddContextProvider } from './context/addComponent';
+import { AddContextProvider } from './context/addComponent';
 
 function App() {
   return (

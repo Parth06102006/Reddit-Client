@@ -1,4 +1,3 @@
-import React from 'react'
 import { IconProps ,IconSize} from './elementsprops'
 
 const Search = (props:IconProps) => {

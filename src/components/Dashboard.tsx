@@ -1,16 +1,11 @@
-import React, { useEffect, useState } from 'react'
-import { SearchContext } from '../context/redditSearch'
-import { useContext } from 'react'
-import axios from 'axios'
+import { useState } from 'react'
 import SideBar from './SideBar'
 import AddBox from './AddBox'
 import { Button } from './Button'
 import {Add} from '../elements/Add'
-import Card from './Card'
 import View from './View'
-type Props = {}
 
-const Dashboard = (props: Props) => {
+const Dashboard = () => {
     const [searchBox,setSearchBox] = useState(false)
     
   return (

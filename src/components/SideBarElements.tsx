@@ -1,4 +1,3 @@
-import React from 'react';
 import { useContext } from 'react';
 import { SearchContext } from '../context/redditSearch';
 

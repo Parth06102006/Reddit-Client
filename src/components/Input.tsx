@@ -1,6 +1,3 @@
-import React from 'react'
-
-
 interface InputProps{
     placeholder:string,
     variant:'primary'|'secondary',

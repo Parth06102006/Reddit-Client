@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import { Button } from './Button'
 import { Input } from './Input'
 import { Search } from '../elements/Search'
@@ -10,7 +10,7 @@ import { SearchContext } from '../context/redditSearch';
 export const Home = () => {
   const {setSearch} = useContext(SearchContext)
   const [subreddit,setsubreddit] = useState('')
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   return (
     <div>
         <div className='flex flex-col gap-1 items-center justify-center'>

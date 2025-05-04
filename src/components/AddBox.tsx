@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import { SearchContext } from '../context/redditSearch'
 import { useContext } from 'react'
 import { Input } from './Input'
