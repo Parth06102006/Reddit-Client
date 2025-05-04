@@ -4,13 +4,17 @@ import SideBarElements from './SideBarElements'
 import { useContext } from 'react'
 import { AddContext } from '../context/addComponent'
 
-type Props = {}
+const SideBar = () => {
+    const  context = useContext(AddContext);
+    if(!context)
+    {
+        throw new Error('No context provided')
+    }
 
-const SideBar = (props: Props) => {
-    let {items,setItems} = useContext(AddContext);
+    const {items,setItems} = context
 
     useEffect(()=>{
-        const stored = JSON.parse(localStorage.getItem('items'));
+        const stored = JSON.parse(localStorage.getItem('items') || '[]');
         setItems(stored)
     },[])
 
@@ -33,7 +37,7 @@ const SideBar = (props: Props) => {
                         <h1 className='text-2xl mt-5 mb-4 font-extrabold text-zinc-200'>Redifi</h1>
                     </div>
                 </div>
-                {items.map(t=>(<SideBarElements title={`${t}`} delete={()=>{handleDelete(t)}}/>))}
+                {items.map((t:string)=>(<SideBarElements title={`${t}`} delete={()=>{handleDelete(t)}}/>))}
             </div>
   )
 }

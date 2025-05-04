@@ -7,7 +7,13 @@ type Props = {
 }
 
 const SideBarElements = (props: Props) => {
-    const  {search,setSearch} = useContext(SearchContext)
+    const  context = useContext(SearchContext);
+    if(!context)
+    {
+        throw new Error('No context provided')
+    }
+
+    const {setSearch} = context
   return (
     <div className='flex justify-between bg-slate-200/70 m-1 p-3 rounded hover:bg-white transition-all'>
         <p className='font-bold text-[18px] text-gray-500 hover:text-black cursor-pointer' onClick={()=>{setSearch(props.title)}}>/r/{props.title}</p>

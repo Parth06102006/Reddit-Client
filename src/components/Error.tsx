@@ -1,4 +1,4 @@
-const Error = () => {
+const ErrorPage = () => {
   return (
     <div className='text-white text-4xl text-center animate-pulse font-extrabold'>
         Invalid Subreddit
@@ -6,4 +6,4 @@ const Error = () => {
   )
 }
 
-export default Error
+export default ErrorPage

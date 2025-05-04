@@ -1,9 +1,14 @@
-import { createContext, useState } from "react";
+import { createContext, useState , ReactNode } from "react";
 
-export const AddContext = createContext();
+interface AddProps {
+    items:string[],
+    setItems:(t:string[])=>void
+}
 
-export function AddContextProvider({children})
+export const AddContext = createContext<AddProps|undefined>(undefined);
+
+export function AddContextProvider({children}:{children : ReactNode})
 {
-    const [items,setItems] = useState([]);
+    const [items,setItems] = useState<string[]>([]);
     return (<AddContext.Provider value={{items,setItems}}>{children}</AddContext.Provider>)
 }

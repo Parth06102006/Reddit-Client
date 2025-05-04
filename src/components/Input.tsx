@@ -2,7 +2,7 @@ interface InputProps{
     placeholder:string,
     variant:'primary'|'secondary',
     size:'sm'|'md'|'lg',
-    onChange?:()=>void
+    onChange?:(e:React.ChangeEvent<HTMLInputElement>)=>void
 }
 
 type VariantStyling = {
