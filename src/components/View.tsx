@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import  { useEffect, useState } from 'react'
 import { SearchContext } from '../context/redditSearch'
 import { useContext } from 'react'
 import axios from 'axios'
@@ -21,7 +21,7 @@ const View = (props: Props) => {
       setLoading(true)
         const getReddit = async()=>
         {
-            let storedItems = JSON.parse(localStorage.getItem('items'))
+            const storedItems = JSON.parse(localStorage.getItem('items')) || [];
             try {
               const response = await axios.get(`https://www.reddit.com/r/${search}.json`);
               console.log('res',response.data);
