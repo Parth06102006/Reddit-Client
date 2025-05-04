@@ -11,7 +11,7 @@ import { AddContext, AddContextProvider } from './context/addComponent';
 
 function App() {
   return (
-    <div className=" bg-neutral-900 flex flex-col items-center justify-center relative w-full h-screen">
+    <div className=" bg-neutral-900 flex flex-col items-center justify-center relative w-full h-screen min-w-1/2">
       <div className='absolute inset-0'>
         <ShootingStars />
         <StarsBackground />

@@ -24,9 +24,12 @@ const View = (props: Props) => {
             console.log(response.data);
             setReddits(response.data.data.children)
             setLoading(false);
-            const updatedList = [...storedItems,`${search}`]
-            setItems(updatedList)
-            console.log('Item',items)
+            if(!storedItems.find(t=> t===search))
+            {
+              const updatedList = [...storedItems,`${search}`]
+              setItems(updatedList)
+              console.log('Item',items)
+            }
         }
         getReddit()
         return(()=>{
