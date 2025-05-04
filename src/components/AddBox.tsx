@@ -13,7 +13,7 @@ const AddBox = (props: Props) => {
     const [subreddit,setsubreddit] = useState('');
     const {setSearch} = useContext(SearchContext);
   return (
-    <div className='bg-white fixed z-10 rounded-2xl'>
+    <div className='bg-transparent fixed z-10 rounded-2xl'>
         <div className='flex flex-col bg-zinc-300 px-5 py-10 rounded-2xl gap-1 border-3 border-orange-500 transition-[border] hover:border-white '>
             <div className='top-0 right-0 absolute m-2' onClick={props.onClick}><i className="fa-solid fa-circle-xmark"></i></div>
             <div className='flex flex-col text-center gap-2'>

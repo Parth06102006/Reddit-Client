@@ -12,6 +12,7 @@ type Props = {}
 
 const Dashboard = (props: Props) => {
     const [searchBox,setSearchBox] = useState(false)
+    
   return (
     <>
         <SideBar/>

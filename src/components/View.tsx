@@ -2,11 +2,9 @@ import React, { useEffect, useRef, useState } from 'react'
 import { SearchContext } from '../context/redditSearch'
 import { useContext } from 'react'
 import axios from 'axios'
-import SideBar from './SideBar'
-import AddBox from './AddBox'
-import { Button } from './Button'
-import {Add} from '../elements/Add'
 import Card from './Card'
+import { AddContext } from '../context/addComponent'
+
 
 type Props = {}
 
@@ -14,26 +12,31 @@ const View = (props: Props) => {
     const {search} = useContext(SearchContext);
     const [reddits,setReddits] = useState([]);
     const [loading,setLoading] = useState(true);
-    let [items,setItems] = useState([]);
+    let {items,setItems} = useContext(AddContext);
     console.log('Search',search)
+
     useEffect(()=>{
       setLoading(true)
         const getReddit = async()=>
         {
-            items = JSON.parse(localStorage.getItem('items'))
+            let storedItems = JSON.parse(localStorage.getItem('items'))
             const response = await axios.get(`https://www.reddit.com/r/${search}.json`);
             console.log(response.data);
             setReddits(response.data.data.children)
             setLoading(false);
-            setItems([...items,`/r/${search}`])
-            console.log(items)
+            const updatedList = [...storedItems,`${search}`]
+            setItems(updatedList)
+            console.log('Item',items)
         }
-        setTimeout(()=>{getReddit()},[2000])
+        getReddit()
         return(()=>{
           localStorage.setItem('items',JSON.stringify(items))
           setLoading(false)})
     },[search])
     console.log(reddits)
+
+
+
   return (
     <>
       {loading ? <div className='w-[120px] h-[120px] rounded-full border-[16px] bg-linear-to-bl from-red-600 to-orange-300 animate-spin'>

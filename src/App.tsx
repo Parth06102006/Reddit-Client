@@ -7,6 +7,7 @@ import { ShootingStars } from "./components/ShootingStars";
 import { StarsBackground } from "./components/Background";
 import Dashboard from './components/Dashboard';
 import { SearchContextProvider } from './context/redditSearch';
+import { AddContext, AddContextProvider } from './context/addComponent';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       </div>
         <div className='flex h-screen w-full justify-center items-center relative z-10'>
         <SearchContextProvider>
+        <AddContextProvider>
         <BrowserRouter>
             <Routes>
             <Route path='/' element={<Home/>}/>
@@ -24,6 +26,7 @@ function App() {
             <Route path='/*' element={<div className='text-white text-4xl'>Page does not exist</div>}/>
             </Routes>
         </BrowserRouter>
+        </AddContextProvider>
         </SearchContextProvider>
         </div>
     </div>
